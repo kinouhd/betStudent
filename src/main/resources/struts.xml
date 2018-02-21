@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="mesTextes"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index"/>
+        <action name="index">
+            <result>/WEB-INF/index.jsp</result>
+        </action>
+
+        <action name="login" class="connexionBDD.Connexion">
+            <result name="basicUSER">/WEB-INF/accueil.jsp</result>
+            <result name="admin">/WEB-INF/accueilAdmin.jsp</result>
+            <result name="error">/WEB-INF/index.jsp</result>
+        </action>
+
+        <action name="goToClassement" class="connexionBDD.goToClassement">
+            <result>/WEB-INF/classement.jsp</result>
+        </action>
+
+        <action name="goToPari" class="connexionBDD.goToPari">
+            <result>/WEB-INF/goToPari.jsp</result>
+        </action>
+
+        <action name="goToCloturer" class="connexionBDD.goToCloturer">
+            <result>/WEB-INF/goToCloturer.jsp</result>
+        </action>
+
+        <action name="cloturerPari" class="connexionBDD.CloturerPari">
+            <result>/WEB-INF/cloturerValider.jsp</result>
+        </action>
+
+        <action name="parier" class="connexionBDD.Pari">
+            <result>/WEB-INF/parier.jsp</result>
+        </action>
+
+        <action name="selectionValiderMatch" class="connexionBDD.ValiderMatch">
+            <result>/WEB-INF/validerMatch.jsp</result>
+        </action>
+
+
+        <action name="validerMatch" class="connexionBDD.ValidationMatch">
+            <result>/WEB-INF/ValidationMatch.jsp</result>
+        </action>
+
+        <action name="goToCreerMatch">
+            <result>/WEB-INF/creationMatch.jsp</result>
+        </action>
+
+        <action name="creationMatch" class="connexionBDD.CreationMatch">
+            <result>/WEB-INF/confirmationMatch.jsp</result>
+        </action>
+
+
+
+
+        <action name="goToValiderMatch" class="connexionBDD.goToValiderMatch">
+            <result>/WEB-INF/goToValiderMatch.jsp</result>
+        </action>
+
+
+        <action name="validerPari" class="connexionBDD.ValiderPari">
+            <result>/WEB-INF/pariValider.jsp</result>
+        </action>
+
+        <action name="goToMesParis" class="connexionBDD.mesParis">
+            <result>/WEB-INF/mesParis.jsp</result>
+        </action>
+
+        <action name="deconnexion" class="connexionBDD.Deconnexion">
+            <result>/WEB-INF/index.jsp</result>
+        </action>
+
+
+        <action name="retourAccueil">
+            <result>/WEB-INF/accueil.jsp</result>
+        </action>
+
+        <action name="creationUser" class="connexionBDD.CreationUser">
+            <result>/WEB-INF/creationUserValider.jsp</result>
+        </action>
+
+        <action name="goToCreationUser">
+            <result>/WEB-INF/creationUser.jsp</result>
+        </action>
+
+        <action name="retourAccueilAdmin">
+            <result>/WEB-INF/accueilAdmin.jsp</result>
+        </action>
+
+    </package>
+</struts>
